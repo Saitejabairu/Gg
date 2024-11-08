@@ -1,0 +1,56 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 21.08.2024 23:02:41
+// Design Name: 
+// Module Name: multiplier_3x3_tb
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+module multiplier_3x3_tb;
+
+    
+    reg [2:0] a;
+    reg [2:0] b;
+    wire [5:0] product;
+
+    
+    multiplier_3x3 dut (a,b,product
+    );
+
+    
+    initial begin
+        
+        $monitor("Time=%0d | a=%b | b=%b | product=%b", $time, a, b, product);
+
+        
+        a = 3'b001; b = 3'b001; #10; 
+
+        
+        a = 3'b010; b = 3'b011; #10; 
+
+       
+        a = 3'b101; b = 3'b110; #10; 
+
+        
+        a = 3'b111; b = 3'b111; #10;
+
+       
+        $finish;
+    end
+
+endmodule
+
+
